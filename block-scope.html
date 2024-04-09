@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learning Block Scope</title>
+  </head>
+  <body>
+    <h1>Learning Block Scope</h1>
+    <script>
+      //Block Scope : 'Means' what all variable and functions we can access inside the block.
+
+      {
+        var a = 10;
+        let b = 20;
+        const c = 30;
+      }
+      // above example we can understand let and const are block scope and var is global scope.
+
+      //Example : 2
+
+      {
+        var a = 10;
+        let b = 20;
+        const c = 30;
+        console.log(a);
+        console.log(b);
+        console.log(c);
+      }
+      console.log(a);
+      console.log(b);
+      console.log(c);
+
+    </script>
+  </body>
+</html>
