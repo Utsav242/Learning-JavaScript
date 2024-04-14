@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body>
+    <h1>Learning Closure</h1>
+
+    <script>
+        // Closure : Function along with lexical scope with bundle that is closure.
+
+        //case : 1
+
+        function a(){
+            var a=10;
+            function b(){
+                console.log(a)
+            }
+            b();
+        }
+        a();
+
+        // Case : 2;
+
+        function myfun1(){
+          var  aa=100;
+            function myfun2(){
+                console.log(aa);
+            }
+             myfun2();
+        }
+        var z = myfun1();
+         console.log(z)
+
+         // 
+    </script>
+</body>
+</html>
