@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CallBack Function</title>
+  </head>
+  <body>
+    <h1>Learning CallBack Function</h1>
+  </body>
+  <script>
+    // callback : - CF passed another function as argument in function.
+    // setTimeout is a callback function code excute in some time.
+    // with the help of callback function we can perform asynchronous operation.
+
+    setTimeout(() => {
+      console.log("code excuted after 5sec");
+    }, 5000);
+    function a(b) {
+      console.log("hh");
+    }
+    a(function b() {
+      return b;
+    });
+  </script>
+</html>
