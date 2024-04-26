@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>High Order Function</title>
+  </head>
+  <body>
+    <h1>Learning High order function</h1>
+
+    <script>
+      // HOC : A function which takes another function as an argument or return function from it as known as HOC.
+
+      // Example : 1
+
+      function x() {
+        console.log("hoc");
+      }
+      function y() {}
+      x(y);
+
+      // Example : 2 Add Number function
+
+      const addFun = (number) => {
+        let storeAdd = 0;
+        for (let i = 0; i < number.length; i++) {
+          storeAdd += number[i];
+        }
+        return storeAdd;
+      };
+
+      const printAdd = [1, 2, 3, 4, 5];
+      const resultAdd = addFun(printAdd);
+      console.log(resultAdd);
+
+      // 2. Even Number Function
+
+      const evenFun = (number) => {
+        let storeEven = [];
+        for (i = 0; i < number.length; i++) {
+          if (number[i] % 2 === 0) {
+            storeEven.push(number[i]);
+          }
+        }
+        return storeEven;
+      };
+      const evenList = [1, 2, 3, 4, 5, 6, 7, 8, 10];
+      const resultEven = evenFun(evenList);
+      console.log(resultEven);
+
+      // 3. Odd Number Function
+
+      const oddFun = (number) => {
+        let storeOdd = [];
+        for (let i = 0; i < number.length; i++) {
+          if (number[i] % 2 === 1) {
+            storeOdd.push(number[i]);
+          }
+        }
+        return storeOdd;
+      };
+      const oddList = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+      const resultOdd = oddFun(oddList);
+      console.log(resultOdd);
+
+      // above i have create three function for sepeartely.
+
+      // How to make above function in High order Function.
+
+      // step1 : This is a high order function in js.
+
+      // Function for even number
+
+      const number = [1, 2, 3, 4, 5, 6, 7, 8];
+      const evenFunction = (number) => {
+        if (number % 2 === 0) {
+          return number;
+        }
+      };
+
+      // Function for odd number
+
+      const oddFunction = (number) => {
+        if (number % 2 === 1) {
+          return number;
+        }
+      };
+
+      // HOF
+      const calculateFun = (number, logic) => {
+        // logic : logic parameter to be passed as an argument, calculateFun can perform various operations on the elements of the number
+        let storeNumber = [];
+        for (let i = 0; i < number.length; i++) {
+          if (logic(number[i]) !== undefined) {
+            storeNumber.push(logic(number[i]));
+          }
+        }
+        return storeNumber;
+      };
+
+      console.log(calculateFun(number, evenFunction));
+      const resultofOdd = calculateFun(number, oddFunction);
+      console.log("odd number", resultofOdd);
+    </script>
+  </body>
+</html>
