@@ -22,5 +22,24 @@
     a(function b() {
       return b;
     });
+
+    // Callback Issue : 1. Callback Hell
+
+    // Callback Hell : is a one callback function inside another callback inside another callbac as known as callback hell.
+    // Callback hell, also known as "pyramid of doom.
+
+    // Example : 1
+
+    const Cart = ["shoes", "pent", "kurta"];
+
+    api.createOrder(cart, function () {
+      api.processPayment(function () {
+        api.showOrder(function () {
+          api.udateWallet();
+        });
+      });
+    });
+
+    // This structure are called Pyramid of Doom
   </script>
 </html>
