@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learning Async</title>
+  </head>
+  <body>
+    <h1>Learning Async Function</h1>
+
+    <script>
+      // Async : is a keyword that use before function to create a async function.
+      // async always return a promise.
+
+      //Example 1 :
+      async function myfun() {
+        return "Namaste JavaScript";
+      }
+
+      const promiseData = myfun();
+
+      promiseData.then((data) => {
+        console.log(data);
+      });
+
+      // Example 2 :
+      // how to retutn a promise : here below a example.
+
+      const mypromiseData = new Promise(function (resolve, reject) {
+        resolve("asyn function always return promise");
+      });
+      async function myfun2() {
+        return mypromiseData;
+      }
+
+      const checkpromise = myfun2();
+      checkpromise.then((data) => {
+        console.log(data);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async Await with api</title>
+  </head>
+  <body>
+    <h1>Learning Async Await fetch api</h1>
+
+    <script>
+      // Fetch data from api using fetch() function.
+
+      const API_URL = "https://api.github.com/users/Utsav242";
+
+      async function myfun1() {
+        const data = await fetch(API_URL); // fetch return response.
+        const jsonData = await data.json(); //data convert into json format and return json value.
+        console.log(jsonData);
+      }
+      myfun1();
+
+      // Error handling in async await
+
+      const API_URLS = "https://api.github.com/users/Utsav242";
+
+      async function myfun2() {
+        try {
+          const data = await fetch(API_URLS);
+          const jsonData = await data.json();
+          console.log(jsonData);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+      myfun2();
+    </script>
+  </body>
+</html>
