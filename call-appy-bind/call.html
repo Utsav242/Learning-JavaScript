@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>call</title>
+  </head>
+  <body>
+    <h1>Learning call Method</h1>
+
+    <script>
+      // call: By call method we can doing function borrowing,
+      // function borrow means we can pass function in other objects.
+      // In call method pass arguments individually.
+
+      // Example : 1
+
+      let user = {
+        name: "Utsav",
+        subName: "Goel",
+
+        callFunction: function () {
+          console.log(this.name);
+        },
+      };
+
+      user.callFunction();
+
+      let user1 = {
+        name: "Sita",
+        subName: "Rama",
+      };
+
+      // function borrow
+
+      user.callFunction.call(user1);
+
+      // Example 2 : we can seprate a function and also use .
+
+      let details = {
+        name: "abc",
+        address: "meerut",
+      };
+      let myfun = function () {
+        console.log(this.name + "", this.address);
+      };
+
+      let details1 = {
+        name: "cxyz",
+        address: "delhi",
+      };
+      myfun.call(details1);
+    </script>
+  </body>
+</html>

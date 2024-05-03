@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bind Method</title>
+</head>
+<body>
+    <h1>Learning Bind Method</h1>
+
+    <script>
+        // Bind : Method of function instance create a new function.
+        // Just bind and keep of copy method and use to later.
+
+        // Example 1 :
+
+        let user={
+            name: 'Utsav',
+            lastName: 'Goel'
+        }
+
+        let user1={
+            name: "SitaRama",
+            lastName : "Pokuri",
+        }
+
+        function myfun(para1,para2){
+            console.log(this.name + " " + this.lastName, para1, para2)
+        }
+
+        let copymethod= myfun.bind(user,['from', 'UP']);
+        copymethod();
+        console.log(copymethod)
+       
+    </script>
+</body>
+</html>

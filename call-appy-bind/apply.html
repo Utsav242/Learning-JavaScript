@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Method</title>
+</head>
+<body>
+    <h1>Learning Apply Method</h1>
+
+    <script>
+        // Apply : This method is similar to call method.
+        // But it's accept arguments as an array.
+
+        // Example 1 :
+
+        let user={
+            name: 'Utsav',
+            lastName: 'Goel'
+        }
+
+        let user1={
+            name: "SitaRama",
+            lastName : "Pokuri",
+        }
+
+        function myfun(para1,para2){
+            console.log(this.name + " " + this.lastName, para1, para2)
+        }
+
+        myfun.apply(user,['From', 'Meerut']); // First user
+        myfun.apply(user1,["from", "USA"]) // Second User
+    </script>
+</body>
+</html>
