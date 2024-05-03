@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currying</title>
+  </head>
+  <body>
+    <h1>Learning Currying</h1>
+
+    <script>
+      //Currying : currying is a technique in JavaScript that allows you to transform functions with multiple arguments into a sequence of functions,
+      //each taking one argument at a time.
+
+      //Example :
+
+      function addFun(x, y) {
+        return x + y;
+      }
+
+      function curried(x) {
+        return function (y) {
+          return x + y;
+        };
+      }
+
+      let result = curried(2);
+      console.log(result(2));
+      let result1 = curried(12);
+      console.log(result1(2));
+    </script>
+  </body>
+</html>
