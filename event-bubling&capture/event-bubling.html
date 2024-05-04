@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Bubbling</title>
+  </head>
+  <style>
+    div {
+      min-height: 180px;
+      min-width: 180px;
+      padding: 40px;
+      border: 1px solid;
+    }
+  </style>
+  <body>
+    <h1>Learning Event Bubbling</h1>
+
+    <div id="garandParent">
+      <div id="parent">
+        <div id="child"></div>
+      </div>
+    </div>
+
+    <script>
+      // Event Bubbling : EB is a default behaviour, where first trigger on the target element & bubble up to its parent element.
+      // evenet bubbling bubble down to up.
+
+      document.querySelector("#garandParent").addEventListener("click", () => {
+        console.log("GrandParent Clicked");
+      });
+
+      // for parent
+      document.querySelector("#parent").addEventListener("click", () => {
+        console.log("Parent Clicked");
+      });
+
+      // For Child
+      document.querySelector("#child").addEventListener("click", (e) => {
+        console.log("Child Clicked");
+        e.stopPropagation(); // this is used for stop event bubbling.
+      });
+
+
+      // how to stop event bubbling
+      // use stopProgation method.
+      // pass event in parament
+      // (e) & e.stopProgration()
+    </script>
+  </body>
+</html>
