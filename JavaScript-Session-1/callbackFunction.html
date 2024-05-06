@@ -13,6 +13,20 @@
     // setTimeout is a callback function code excute in some time.
     // with the help of callback function we can perform asynchronous operation.
 
+    // Example 1:
+
+    function sum(a, b, callback) {
+      callback();
+      return a + b;
+    }
+    function min() {
+      console.log("add");
+    }
+    const result = sum(8, 2, min);
+    console.log(result);
+
+    // Example 2 :
+    
     setTimeout(() => {
       console.log("code excuted after 5sec");
     }, 5000);

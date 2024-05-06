@@ -27,7 +27,7 @@
       async function myfun2() {
         try {
           const data = await fetch(API_URLS);
-          const jsonData = await data.json();
+          const jsonData = await data.json(); //Again, the json method returns a Promise that resolves to the parsed JSON data.
           console.log(jsonData);
         } catch (error) {
           console.log(error);
