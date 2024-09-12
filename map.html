@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map</title>
+  </head>
+  <body>
+    <h1>Learning Map Method</h1>
+
+    <script>
+      //Map : map function is used to transform of array. transform means- suppose we get array value in another array updated value.
+
+      // Map method use with arrow function.
+
+      // Example 1: Find double number.
+      const myeven = [1, 2, 3, 4, 5, 6, 7, 8];
+      const resulteven = myeven.map((number) => {
+        return number * 2;
+      });
+      console.log(resulteven);
+
+
+      //Map method with Hoc.
+      const doubleNumber = [1, 2, 3, 4, 5, 6];
+
+      const addDouble = (number) => {
+        return number * 2;
+      };
+
+      const output = doubleNumber.map(addDouble);
+      console.log(output);
+
+      // 
+    </script>
+  </body>
+</html>

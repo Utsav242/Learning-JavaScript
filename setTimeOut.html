@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learning SetTimeOut</title>
+  </head>
+  <body>
+    <h1>Learning SetTimeout</h1>
+
+    <script>
+      // setTimeout : does not gurantee for execute on time.
+
+      // Example : 1 This is simple example of settimeout.
+
+      console.log("Namaste JavaScript");
+      setTimeout(function myfun() {
+        console.log("add setTimeout");
+        return myfun;
+      }, 5000);
+
+      console.log("Thanks Javascript");
+
+      // Example : 2 if we have million type of code so, its does not give gurantee will be excute on according to timer.
+
+      console.log("Namaste JavaScript");
+      setTimeout(function myfun1() {
+        console.log("add setTimeout");
+        return myfun1;
+      }, 5000);
+      //Miliion code
+      let startDate = new Date().getTime();
+      let endDate = startDate;
+      while (endDate < startDate + 10000) {
+        endDate = new Date().getTime();
+      }
+      console.log("While Expries");
+
+      // output : Namaste JavaScript, while Expries, add setTimeout
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Closure EventListener</title>
+  </head>
+  <body>
+    <h1>Learning Closure EventListener</h1>
+    <button id="mybtn">ClickMe</button>
+
+    <script>
+      // EventListener with closure
+
+      function EventListener() {
+        let count = 0;
+        document
+          .getElementById("mybtn")
+          .addEventListener("click", function abc() {
+            console.log("Successfully Clicked");
+          });
+      }
+      EventListener();
+    </script>
+  </body>
+</html>

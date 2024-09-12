@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learning Variable Shadowing</title>
+  </head>
+  <body>
+    <h1>Learning Variable Shadowing</h1>
+
+    <script>
+      // Case 1: for variable --> Output will be 100 for both console because global scope and a shadow of above a.
+
+      var a = 10;
+      {
+        var a = 100;
+        console.log(a);
+      }
+      console.log(a);
+
+      // Case 2: For let --> output will come different becase let is block scope and memory allocate different block.
+
+      let b=10;
+      {
+        let b=100;
+        console.log(b);
+      }
+      console.log(b)
+
+      // Case 3: For Const --> same as let statement.
+
+      const c=10;
+      {
+        const c=100;
+        console.log(c)
+      }
+      console.log(c)
+
+
+      // Lexical scope :
+
+      {
+        const d=10;
+        {
+            const d=100;
+            console.log(d)
+        }
+      }
+
+      // ilgeal shawdoing : output showing error a has been declare because var a is global.
+
+      let a=10;
+      {
+        var a=10;
+        console.log(a)
+      }
+    </script>
+  </body>
+</html>

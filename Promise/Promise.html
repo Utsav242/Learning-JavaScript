@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise</title>
+  </head>
+  <body>
+    <h1>Learning Promise</h1>
+
+    <script>
+      // Promise : Promise is a object represent eventual completion of async operations.
+      // Handle async operations.
+      // Promises have three state - Resolve, pending, reject.
+
+      // Creating Promise.
+
+      //   const cart = ["Pant", "shirt", "shoes"];
+
+      //   const promise = Myorder(cart);
+      //   console.log(promise);
+
+      //   function Myorder(shop) {
+      //     const createPromies = new Promise(function (resolve, reject) {
+      //       if (!validateCart(cart)) {
+      //         const err = new Error("Cart is empty");
+      //         reject(err);
+      //       }
+      //       const orderId = "123456";
+      //       if (orderId) {
+      //         setTimeout(function () {
+      //           resolve(orderId);
+      //         }, 2000);
+      //       }
+      //     });
+      //     return createPromies;
+      //   }
+
+      //   function validateCart(cart) {
+      //     return false;
+      //   }
+
+      //   promise
+      //     .then(function (orderId) {
+      //       console.log(orderId);
+      //     })
+
+      //     // Exception Handling error with reject function
+      //     .catch(function (err) {
+      //       console.log(err.message);
+      //     });
+
+      //promise chaining
+
+      const cart = ["Pant", "shirt", "shoes"];
+
+      const promise = Myorder(cart);
+      console.log(promise);
+
+      function Myorder(shop) {
+        const createPromies = new Promise(function (resolve, reject) {
+          if (!validateCart(cart)) {
+            const err = new Error("Cart is empty");
+            reject(err);
+          }
+          const orderId = "123456";
+          if (orderId) {
+            setTimeout(function () {
+              resolve(orderId);
+            }, 2000);
+          }
+          const summaryOrder = "Your order has been placed.";
+          if (summaryOrder) {
+            setTimeout(function () {
+              resolve(summaryOrder);
+            }, 2000);
+          }
+        });
+        return createPromies;
+      }
+
+      function validateCart(cart) {
+        return true;
+      }
+
+      function proceedToTpayment(orderId) {
+        return new Promise(function (resolve, reject) {
+          resolve("payment done");
+        });
+      }
+      function summaryOrder(proceedToTpayment) {
+        return new Promise(function (resolve, reject) {
+          resolve("Your order has been successfully placed.");
+        });
+      }
+
+      Myorder(cart)
+        .then(function (orderId) {
+          console.log(orderId);
+          return proceedToTpayment(orderId);
+        })
+
+        .then(function (paymentStatus) {
+          console.log(paymentStatus);
+          return summaryOrder();
+        })
+
+        .then(function (orderId) {
+          console.log("renderafter error catch function");
+        })
+        // Exception Handling error with reject function
+        .catch(function (err) {
+          console.log(err.message);
+        });
+
+      // Simple Example of promise
+
+      const MyPromise = new Promise(function (resolve, reject) {
+        const mynumber = 10;
+        if (mynumber % 2 === 0) {
+          resolve("Promise has been resolve");
+        } else {
+          reject("Promise Failed !");
+        }
+      });
+
+      MyPromise.then(function (result) {
+        console.log(result);
+      }).catch(function (error) {
+        console.log(error);
+      });
+    </script>
+  </body>
+</html>

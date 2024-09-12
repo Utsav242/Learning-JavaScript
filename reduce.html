@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reduce</title>
+  </head>
+  <body>
+    <h1>Learning Reduce Function</h1>
+
+    <script>
+      // Reduce : Reduce function the element of an array to return a single value.
+
+      // Example 1: For Sum digital
+
+      const addNumber = [1, 2, 4, 5, 6, 7, 8];
+      function addNumFun(addNumber) {
+        let sum = 0;
+        for (let i = 0; i < addNumber.length; i++) {
+          sum = sum + addNumber[i];
+        }
+        return sum;
+      }
+
+      const result = addNumFun(addNumber);
+      console.log(result);
+
+      // By using Reduce Method
+
+      const Reduce = addNumber.reduce(function (acc, curr) {
+        acc = acc + curr;
+        return acc;
+      }, 0);
+      console.log(Reduce);
+
+      // Example 2 : find Max number
+
+      const maxNumberData = [1, 2, 3, 4, 5, 6, 8, 10];
+
+      const maxNumberFun = (maxNumberData) => {
+        let storeMaxNo = 0;
+        for (let i = 0; i < maxNumberData.length; i++) {
+          if (maxNumberData[i] > storeMaxNo) {
+            storeMaxNo = maxNumberData[i];
+          }
+        }
+        return storeMaxNo;
+      };
+
+      console.log(maxNumberFun(maxNumberData));
+
+      // By using reduce method
+
+      const reduceOutput = maxNumberData.reduce(function (accu, curr) {
+        if (curr > accu) {
+          accu = curr;
+        }
+        return accu;
+      }, 0);
+      console.log(reduceOutput);
+
+      //
+    </script>
+  </body>
+</html>
